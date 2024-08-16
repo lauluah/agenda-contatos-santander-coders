@@ -44,7 +44,7 @@ public class Menu {
                         this.agenda.criarContato();
                         System.out.println(Arrays.toString(controlador.getContatos()));
                     } catch (Exception e){
-
+                        Util.erro(e.getMessage());
                     }
                     break;
 
@@ -57,6 +57,11 @@ public class Menu {
                     break;
 
                 case 3:
+                    try {
+                        this.agenda.editarContato();
+                    } catch (Exception e) {
+                        Util.erro(e.getMessage());
+                    }
                     break;
 
                 case 4:

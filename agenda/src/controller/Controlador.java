@@ -9,7 +9,7 @@ public class Controlador {
 
     private static Contato[] contatos;
 
-    public Contato[] criarContato(Contato contato)  throws Exception{
+    public Contato[] criarContato(Contato contato) throws Exception{
         try {
             int tamanhoAgenda = checarTamanho();
             consultarNumeroExistente(contato.getTelefone());
@@ -77,13 +77,12 @@ public class Controlador {
         }
     }
 
-    public Contato detalharContato(String telefone) {
+    public Contato detalharContato(String telefone) throws Exception {
         try {
             int indice = indiceDeContatosPorTelefone(telefone);
             return contatos[indice];
         } catch (Exception e){
-            return null;
+            throw e;
         }
     }
-
 }
